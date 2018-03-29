@@ -1,10 +1,14 @@
 module.exports = {
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "ecmaVersion": 6
     },
     "env": {
         "browser": true,
         "node": true
+    },
+    "globals": {
+        "Symbol": true
     },
     "extends": "eslint:recommended",
     "rules": {
