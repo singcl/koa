@@ -16,7 +16,7 @@ module.exports = {
       "linebreak-style": 0,
       "indent": ["error", 4],
       "no-var": "off",
-      "semi": "off",
+      "semi": ["error", "never"],
       "max-len": ["error", 150],
       "no-multi-spaces": ["error", { ignoreEOLComments: true }],
       "no-console": 0

@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/singcl/koa/issues"
   },
-  "homepage": "https://github.com/singcl/koa#readme"
+  "homepage": "https://github.com/singcl/koa#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
 }

@@ -22,7 +22,7 @@ const callback = Symbol('callback')
  */
 class Application {
     constructor() {
-        this.callbackFunc;
+        this.callbackFunc
     }
 
     /**
