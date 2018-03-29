@@ -1,0 +1,22 @@
+{
+  "name": "@singcl/koa",
+  "version": "0.0.1",
+  "description": "A counterfeit Koa.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Koa"
+  ],
+  "author": "singcl",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singcl/koa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/singcl/koa/issues"
+  },
+  "homepage": "https://github.com/singcl/koa#readme"
+}
