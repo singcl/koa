@@ -2,6 +2,7 @@ const http = require('http')
 const request = require('./request')
 const response = require('./response')
 const context = require('./context-hoc')
+const compose = require('./compose')
 
 // Application Class private method name
 const callback = Symbol('callback')
@@ -14,7 +15,7 @@ const responseBody = Symbol('responseBody')
  */
 class Application {
     constructor() {
-        this.callbackFunc
+        this.middlewares = []
         this.context = context
         this.request = request
         this.response = response
@@ -65,9 +66,10 @@ class Application {
         return (req, res) => {
             const ctx = this[createContext](req, res)
             const respond = () => this[responseBody](ctx)
-            // 这就要求this.callbackFunc(ctx)的返回值是一个thenable对象
+            const fn = compose(this.middlewares)
+            // 这就要求返回值是一个thenable对象
             // Promise/Async 函数都是thenable对象
-            this.callbackFunc(ctx).then(respond)
+            return fn(ctx).then(respond)
         }
     }
 
@@ -79,11 +81,11 @@ class Application {
 
     /**
      * 挂载中间件， 中间件的雏形
-     * @param {Function} fn 中间件的雏形
+     * @param {Function} middleware 中间件的雏形
      * @memberof Application
      */
-    use(fn) {
-        this.callbackFunc = fn
+    use(middleware) {
+        this.middlewares.push(middleware)
     }
 }
 
