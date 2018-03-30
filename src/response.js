@@ -3,6 +3,7 @@
  * 自定义response对象，该对象将作为原型对象使用
  * 在Object.create(response) 中作为原型对象生成一个对象实例
  * 所以该对象中的this 始终指向对象实例
+ * 查看Application 中的createContext方法就更加命名this.res = res(node原生的res)
  * @this 对象实例
  */
 const response = {

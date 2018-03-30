@@ -4,6 +4,7 @@ const url = require('url')
  * 自定义request对象，该对象将作为原型对象使用
  * 在Object.create(request) 中作为原型对象生成一个对象实例
  * 所以该对象中的this 始终指向对象实例
+ * 查看Application 中的createContext方法就更加命名this.req = req(node原生的req)
  * @this 对象实例
  */
 const request = {
