@@ -30,9 +30,11 @@ const compose = function(middlewares) {
     return async (ctx) => {
         // 核心洋葱模型 - 递归从里到外层层的包裹
         // 层层包裹的时候每一层都是一个闭包，都会保持住一个next
-        for (let i = len - 1; i >= 0; i--) {
+        let i = len - 1
+        while( i >= 0) {
             let currMiddleware = middlewares[i]
             next = nextCreator(currMiddleware, next, ctx)
+            i--
         }
 
         // 核心洋葱模型 - 从外到里层层剥开
