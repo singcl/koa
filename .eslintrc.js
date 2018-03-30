@@ -1,3 +1,4 @@
+// http://eslint.cn/docs/user-guide/configuring
 module.exports = {
     "parserOptions": {
         "sourceType": "module",
@@ -5,11 +6,11 @@ module.exports = {
     },
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "es6": true
+        
     },
-    "globals": {
-        "Symbol": true
-    },
+    "globals": {},
     "extends": "eslint:recommended",
     "rules": {
       "max-len": ["error", { "comments": 200 }],
