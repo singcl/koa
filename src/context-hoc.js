@@ -37,9 +37,11 @@ function delegateSet(property, name) {
     })
 }
 
+// 新的request 代理属性直接添加在数组中
 const requestSet = []
 const requestGet = ['query']
 
+// 新的response 代理属性直接添加在数组中
 const responseSet = ['body', 'status']
 const responseGet = responseSet
 
