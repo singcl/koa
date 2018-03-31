@@ -10,8 +10,9 @@
  */
 const compose = function(middlewares) {
 
-    // 对Koa中间件进行一层包装 返回一个nextCreator, 这样做的好处是方便下一步统一聚合REDUCE
+    // 对Koa中间件进行一层包装 返回一个nextCreator数组, 这样做的好处是方便下一步统一聚合REDUCE
     const nextCreators = middlewares.map(function(middleware) {
+        // 返回一个 nextCreator
         return function(ctx, next) {
             return async function() {
                 await middleware(ctx, next)
