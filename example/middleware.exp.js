@@ -1,4 +1,4 @@
-const Koa = require('../src/application')
+const Koa = require('../src/application-es')
 const app = new Koa()
 
 const responseData = {}
