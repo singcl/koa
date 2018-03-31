@@ -18,7 +18,7 @@ module.exports = {
       "indent": ["error", 4],
       "no-var": "off",
       "semi": ["error", "never"],
-      "max-len": ["error", 150],
+      "max-len": ["error", 180],
       "no-multi-spaces": ["error", { ignoreEOLComments: true }],
       "no-console": 0
     }
