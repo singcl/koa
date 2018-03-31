@@ -25,5 +25,10 @@ const nextCreatorsWrapper = (middlewares) => middlewares.map((middleware) => (ct
  */
 const compose = (middlewares) => nextCreatorsWrapper(middlewares).reduce((a, b) => (ctx, next) => (a(ctx, b(ctx, next))))
 
+// If you like, You kan combine these a function. HOHO!
+const composeA = (middlewares) => middlewares.map((middleware) => (ctx, next) => async () => await middleware(ctx, next)).reduce((a, b) => (ctx, next) => (a(ctx, b(ctx, next))))
+
 //
 module.exports = compose
+module.exports = composeA
+
