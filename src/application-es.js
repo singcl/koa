@@ -66,13 +66,14 @@ class Application {
         return (req, res) => {
             const ctx = this[createContext](req, res)
             const respond = () => this[responseBody](ctx)
+            // 初始next
             let next = async () => Promise.resolve()
             // compose 中间件核心逻辑
             // 返回一个next 函数
-            const fn = compose(this.middlewares)(ctx, next)
+            next = compose(this.middlewares)(ctx, next)
             // 这就要求返回值是一个thenable对象
             // Promise/Async 函数都是thenable对象
-            return fn().then(respond)
+            return next().then(respond)
         }
     }
 
